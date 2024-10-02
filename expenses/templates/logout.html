@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    Logged Out
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">You have been logged out successfully.</h5>
+                    <p class="card-text">Thank you for using Expense Tracker. To log back in, click the button below.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Login Again</a>
+                    <a href="{% url 'home' %}" class="btn btn-secondary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Techjays Expense Tracker{% endblock %}</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <style>
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .navbar {
+            background-color: #007bff !important;
+            border-bottom: none;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-size: 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important;  
+        }
+
+        
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+       
+        .btn-outline-dark {
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    
+    {% if request.resolver_match.url_name != "home" and request.resolver_match.url_name != "login" and request.resolver_match.url_name != "register" %}
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Techjays Expense Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'manage_expenses' %}">Manage Expenses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'expense_history' %}">Expense History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'reports' %}">Reports</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+    
+    <main>
+        <div class="container mt-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>&copy;   2024 Techjays. All Rights Reserved.</p>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
