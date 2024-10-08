@@ -39,7 +39,8 @@ def dashboard(request):
     current_month = timezone.now().strftime("%B %Y")
     current_month_expenses = Expense.objects.filter(user=request.user, date__month=timezone.now().month, date__year=timezone.now().year)
     total_expenses = current_month_expenses.aggregate(total=Sum('amount'))['total'] or 0
-    recent_expenses = current_month_expenses.order_by('-date')[:5]
+    recent_expenses = current_month_expenses.filter(amount__gt=100).order_by('-date')[:5]
+      
 
     context = {
         'current_month': current_month,

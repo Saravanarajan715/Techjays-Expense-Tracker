@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'expenses',
-    
+    'expenses',   
 ]
 
 MIDDLEWARE = [
@@ -87,8 +86,6 @@ LOGIN_REDIRECT_URL = 'dashboard'  # Redirect to the dashboard after login
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
-  
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -109,10 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'expenses.validators.CustomPasswordValidator',  # Reference your custom validator
     },
 ]
-
-   
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
