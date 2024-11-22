@@ -1,0 +1,183 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; 
+}
+
+
+.navbar {
+    background-color: #343a40; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    justify-content: center; 
+}
+
+.navbar-brand {
+    margin-right: auto; 
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+.navbar-nav {
+    justify-content: center; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; 
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa; 
+}
+
+
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        width: 100%;
+        justify-content: space-around; 
+    }
+}
+
+
+.card {
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    border: none; 
+    margin-bottom: 20px; 
+}
+
+.card-header {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    color: #343a40;
+    border-color: #343a40;
+}
+
+
+.footer {
+    background-color: #f8f9fa; 
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+}
+
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da; 
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: none; 
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%; 
+    }
+}
+
+
+.container {
+    padding-top: 20px;
+}
+
+
+.alert {
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+.card-body {
+    padding: 1.5rem;
+}
+
+
+h5, h6 {
+    font-weight: 500;
+}
+
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    color: #007bff;
+}
+
+.page-link:hover {
+    color: #0056b3;
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+
+.navbar {
+    justify-content: center;
+}
+
+.navbar-brand {
+    margin-right: auto; 
+    font-weight: bold;
+}
+
+.navbar-nav {
+    justify-content: center; 
+}
+

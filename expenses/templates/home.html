@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, lightblue, #fcb69f);">
+    <div class="text-center text-dark">
+        <h1 class="mb-4">Welcome to Techjays Expense Tracker </h1>
+        <p class="lead mb-5">Track your expenses effortlessly and take control of your finances today!</p>
+
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'register' %}" class="btn btn-lg btn-outline-dark w-100" style="border-radius: 25px;">Register</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'login' %}" class="btn btn-lg btn-outline-dark w-100" style="border-radius: 25px;">Login</a>
+            </div>
+        </div>
+
+       
+        <section class="mt-5">
+            <h2>About Expense Tracker</h2>
+            <p class="lead">Our app helps you track your daily, monthly, and yearly expenses effortlessly. Analyze your spending and save money with useful reports.</p>
+        </section>
+
+       
+        <section class="mt-5">
+            <h2>Money Saving Tips</h2>
+            <p class="lead">Here are some tips to help you manage your money better:</p>
+            <ul class="text-start mx-auto" style="max-width: 600px;">
+                <li>Track your spending regularly and categorize your expenses.</li>
+                <li>Set a budget and try to stick to it.</li>
+                <li>Avoid impulse purchases by differentiating between needs and wants.</li>
+                <li>Make use of discounts and deals to save more.</li>
+                <li>Set clear financial goals and save towards them every month.</li>
+            </ul>
+        </section>
+    </div>
+</div>
+{% endblock %}
